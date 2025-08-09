@@ -70,3 +70,33 @@
 ## Aula 10 - Criando e rodando os scripts no banco de dados
 * Conexão ao banco de dados (PgAdmin e PostgreSQL);
 * Criação dos bancos das tabelas via SQL (autor e livro);
+
+## Aula 11 - Configurando conexão com o banco de dados através da aplicação
+* Dependências necessárias (Spring Data JPA, PostgreSQL);
+* Troca do `application.properties` para `application.yml`;
+* Configuração da URL JDBC (jdbc:postgresql://localhost:5432/library);
+* Especificar o `driver-class-name` para que a aplicação se conecte com o banco;
+
+## Aula 12 - Como configurar um DataSource e um Pool de Conexões
+* DataSource → Essencial para estabelecer conexão com o banco de dados;
+* Configurações presentes no application.yml;
+    - spring.datasource.url
+    - spring.datasource.username
+    - spring.datasource.password
+    - spring.datasource.driver-class-name
+* Criar um pool de conexões pode melhorar a eficiência e desempenho da aplicação;
+* Importante testar a conexão para que tudo ocorra bem;
+
+# Aula 13 - Como mapear entidades JPA
+* Criação da Entidade Autor
+    - Anotação @Entity para indicar que a classe Autor é uma entidade;
+    - Anotação @Table para definir o nome da tabela para Autor;
+* Mapeamento da ID
+    - Colocando o tipo da variável id como UUID;
+    - Utilização da anotação @GeneratedValue para a geração automática do ID;
+* Mapeamento de Atributos
+    - Nome do autor mapeado com a anotação @Column com restrição de 100 caracteres;
+    - Mapeamento da data de nascimento e nacionalidade com restrições;
+* Utilização do Lombok
+    - Implementação de getters e setters utilizando as anotações @Getter e @Setter;
+* Necessário a utilização de um construtor vazio para o funcionamento do JPA;
