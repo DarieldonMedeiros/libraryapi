@@ -87,7 +87,7 @@
 * Criar um pool de conexões pode melhorar a eficiência e desempenho da aplicação;
 * Importante testar a conexão para que tudo ocorra bem;
 
-# Aula 13 - Como mapear entidades JPA
+## Aula 13 - Como mapear entidades JPA
 * Criação da Entidade Autor
     - Anotação @Entity para indicar que a classe Autor é uma entidade;
     - Anotação @Table para definir o nome da tabela para Autor;
@@ -100,3 +100,28 @@
 * Utilização do Lombok
     - Implementação de getters e setters utilizando as anotações @Getter e @Setter;
 * Necessário a utilização de um construtor vazio para o funcionamento do JPA;
+
+## Aula 14 - Mapeamento da entidade Livro e utilização do Lombok
+* Criação da Entidade Livro
+    - Anotação @Entity para indicar que a classe livro é uma entidade;
+    - Anotação @Table para definir o nome da tabela para Livro;
+* Mapeamentos dos atributos:
+    - ID: UUID;
+    - ISBN: String (20 caracteres);
+    - Titulo: String (150 caracteres);
+    - Data de Publicação: LocalDate;
+    - Genero: (GeneroLivro) → Classe criada com os gêneros;
+    - Preço: Double (Foi mencionado o BigDecimal que tem uma maior precisão, lidando com valores monetários);
+* Relacionamento com a entidade Autor:
+    - Relacionamento do tipo Many to One (Muitos livros para um autor);
+    - Na classe Autor, foi utilizado a relação One to Many (Um autor para vários livros);
+* Enumeração para Gênero do Livro:
+    - Como mencionado anteriormente, foi criada uma classe chamada GeneroLivro contendo os gêneros dos livros;
+    - Na anotação @Enumerated, uma boa prática é colocar o valor EnumType como string, ficando EnumType.STRING
+* Utilização do Lombok:
+    - Foi apresentada a anotação @Data que contém as seguintes anotações:
+      1. @Getter;
+      2. @Setter;
+      3. @ToString;
+      4. @EqualsAndHashCode;
+      5. @RequiredArgsConstructor;
