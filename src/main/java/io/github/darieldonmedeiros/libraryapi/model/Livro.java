@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
@@ -32,8 +33,8 @@ public class Livro {
     private GeneroLivro genero;
 
     @Column(name = "preco", precision = 18, scale = 2)
-    private Double preco;
-    // BigDecimal tem uma precisão maior e é utilizado para valores monetários
+    private BigDecimal preco;
+    /* BigDecimal tem uma precisão maior e é utilizado para valores monetários */
 
     // Mapeamento objeto relacional: Many to One → Muitos livros para um autor
     @ManyToOne

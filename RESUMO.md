@@ -125,3 +125,15 @@
       3. @ToString;
       4. @EqualsAndHashCode;
       5. @RequiredArgsConstructor;
+
+## Aula 15 - Como gerar as tabelas automaticamente com JPA
+* Configurações no `application.yml`:
+    - adicionar a opção: `spring.jpa.hibernate.ddl-auto = update` para criar e alterar tabelas SQL;
+    - Opções do ddl-auto:
+      1. none: padrão do spring, não cria tabelas
+      2. create: toda vez que a aplicação é iniciada, uma tabela é criada;
+      3. create-drop: toda vez que a aplicação é iniciada uma tabela é criada, mas quando a aplicação é encerrada a tabela é encerrada. Útil para testes;
+      4. update: Atualiza a tabela existente ou cria uma nova se não existir uma tabela. Não indicado para ambientes em produção;
+* Foi necessário alterar a variável preço para um BigDecimal;
+
+##
